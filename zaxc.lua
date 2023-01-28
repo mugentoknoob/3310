@@ -2,6 +2,21 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "Auto Farm - Nuke Simulator", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionOMG"})
 
 autoegg = "Silo 1"
+local names = {"Nuke Shop", "City", "Jungle", "Desert", "Beach", "Site Deep Blue", "Test Lab 33", "Volcano HQ", "Moon Base", "Excavation Site 42", "Dark Side Station", "Dark Lab 33"}
+
+-- Unlock OpenGUI Everywhere
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3882.45751953125, 635.9100341796875, -3726.45703125) -- City
+task.wait(0.5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4897.2958984375, 634.9771118164062, -2855.522216796875) -- Beach
+task.wait(0.5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3766.79931640625, 854.472900390625, 3335.408935546875) -- MoonBase
+task.wait(0.5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1345.509033203125, 837.1240234375, 3399.826171875) -- Dark Side
+task.wait(0.5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1747.055419921875, 836.968017578125, 3343.113037109375) -- Dark Lab
+task.wait(0.5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3989.4306640625, 637.9024047851562, -4214.2392578125) -- Base Spawn
+
 
 local Players = game:GetService("Players")
 local lp = Players.LocalPlayer
@@ -17,7 +32,7 @@ local Tab = Window:MakeTab({
 })
 
 local Section = Tab:AddSection({
-	Name = "Main - AutoFarm"
+	Name = "Main"
 })
 
 Tab:AddToggle({
@@ -33,6 +48,49 @@ Tab:AddToggle({
         end
 end)
 	end    
+})
+
+
+Tab:AddToggle({
+	Name = "Auto Claim Chest!",
+	Default = false,
+	Callback = function(bool)
+		getgenv().claimnmchest = bool
+        task.spawn(function()
+        while claimnmchest and task.wait() do
+        local TouchInterest222 = game.workspace.Chests.NormalChest.OnTouch.TouchInterest
+        firetouchinterest(TouchInterest222.Parent, game.Players.LocalPlayer.Character.HumanoidRootPart, 0)
+        task.wait(3)
+        firetouchinterest(TouchInterest222.Parent, game.Players.LocalPlayer.Character.HumanoidRootPart, 1)
+end
+end)
+	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Sup"
+})
+
+Tab:AddButton({
+	Name = "AntiAFK!",
+	Callback = function()
+      	local vu = game:GetService("VirtualUser")
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        wait(1)
+        vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "OpenEgg",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "AutoOpenEgg"
 })
 
 Tab:AddDropdown({
@@ -61,36 +119,74 @@ end)
 	end    
 })
 
-Tab:AddToggle({
-	Name = "Auto Claim Chest!",
-	Default = false,
-	Callback = function(bool)
-		getgenv().claimnmchest = bool
-        task.spawn(function()
-        while claimnmchest and task.wait() do
-        local TouchInterest222 = game.workspace.Chests.NormalChest.OnTouch.TouchInterest
-        firetouchinterest(TouchInterest222.Parent, game.Players.LocalPlayer.Character.HumanoidRootPart, 0)
-        task.wait(5)
-end
-end)
-	end    
+local Tab = Window:MakeTab({
+	Name = "Teleport",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
 })
 
 local Section = Tab:AddSection({
-	Name = "Other"
+	Name = "Teleport"
+})
+
+Tab:AddDropdown({
+	Name = "SelectMap",
+	Options = names,
+	Callback = function(Value)
+	for i,v in pairs(game:GetService("Workspace").TeleportLocations:GetChildren())do
+    if v:IsA("Part") and v.Name == (Value) then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+    end
+    end
+	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Other",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "OpenGUI Everywhere"
 })
 
 Tab:AddButton({
-	Name = "AntiAFK!",
+	Name = "ShinyMachine!",
 	Callback = function()
-      	local vu = game:GetService("VirtualUser")
-        game:GetService("Players").LocalPlayer.Idled:connect(function()
-        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-        wait(1)
-        vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-end)
+      	Workspace.Machines.ShinyMachine.OnTouch.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+        task.wait(60)
+        Workspace.Machines.ShinyMachine.OnTouch.CFrame = game:GetService("Workspace").Machines.ShinyMachine.Root.CFrame
   	end    
 })
 
+Tab:AddButton({
+	Name = "EnchanterMachine",
+	Callback = function()
+      	Workspace.Machines.EnchanterMachine.OnTouch.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+        task.wait(60)
+        Workspace.Machines.EnchanterMachine.OnTouch.CFrame = game:GetService("Workspace").Machines.EnchanterMachine.Root.CFrame
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "PlayerUpgrades",
+	Callback = function()
+      	Workspace.Machines.PlayerUpgrades.Root.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+        task.wait(60)
+        Workspace.Machines.PlayerUpgrades.Root.CFrame = game:GetService("Workspace").Machines.PlayerUpgrades.PinkRingThing.CFrame
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "RainbowMachine",
+	Callback = function()
+      	Workspace.Machines.RainbowMachine.OnTouch.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+        task.wait(60)
+        Workspace.Machines.RainbowMachine.OnTouch.CFrame = game:GetService("Workspace").Machines.RainbowMachine.Root.CFrame
+  	end    
+})
 
 OrionLib:Init()
