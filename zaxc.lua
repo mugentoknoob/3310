@@ -68,11 +68,9 @@ Tab:AddToggle({
 		getgenv().claimnmchest = bool
         task.spawn(function()
         while claimnmchest and task.wait() do
-        local args = {
-            [1] = "NormalChest"
-        }
-        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.ChestService.RE.Claim:FireServer(unpack(args))
-        task.wait(2)
+        local TouchInterest222 = game.workspace.Chests.NormalChest.OnTouch.TouchInterest
+        firetouchinterest(TouchInterest222.Parent, game.Players.LocalPlayer.Character.HumanoidRootPart, 0)
+        task.wait(5)
 end
 end)
 	end    
@@ -93,10 +91,6 @@ Tab:AddButton({
 end)
   	end    
 })
-
---[[
-Name = <string> - The name of the section.
-]]
 
 
 OrionLib:Init()
