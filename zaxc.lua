@@ -36,7 +36,7 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddToggle({
-	Name = "Auto Collect All Drop!",
+	Name = "Auto Collect All Drop",
 	Default = false,
 	Callback = function(bool)
 	getgenv().collectalldrop = bool
@@ -52,7 +52,7 @@ end)
 
 
 Tab:AddToggle({
-	Name = "Auto Claim Chest!",
+	Name = "Auto Claim Chest",
 	Default = false,
 	Callback = function(bool)
 		getgenv().claimnmchest = bool
@@ -72,7 +72,7 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddButton({
-	Name = "AntiAFK!",
+	Name = "AntiAFK",
 	Callback = function()
       	local vu = game:GetService("VirtualUser")
         game:GetService("Players").LocalPlayer.Idled:connect(function()
@@ -103,7 +103,7 @@ Tab:AddDropdown({
 })
 
 Tab:AddToggle({
-	Name = "Auto OpenEgg!",
+	Name = "Auto OpenEgg",
 	Default = false,
 	Callback = function(bool)
 		getgenv().autoopeneggz = bool
@@ -152,7 +152,7 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddButton({
-	Name = "ShinyMachine!",
+	Name = "ShinyMachine",
 	Callback = function()
       	Workspace.Machines.ShinyMachine.OnTouch.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
         task.wait(60)
