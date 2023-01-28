@@ -38,7 +38,7 @@ end)
 Tab:AddDropdown({
 	Name = "Select Egg",
 	Default = "Silo 1",
-	Options = {"Silo 1", "Silo 2", "G Silo 3", "G Silo 4", "Silo 5", "Silo 6", "G Silo 7", "G Silo 8", "Silo 9", "Silo 10","G Silo 11", "G Silo 12", "Silo 13", "Silo 14", "G Silo 15", "G Silo 16", "Silo 17", "Silo 18", "G Silo 19", "G Silo 20","Silo 21", "Silo 22", "G Silo 23", "G Silo 24", "Silo 25", "Silo 26", "G Silo 27", "G Silo 28", "Silo 29", "Silo 30",  "G Silo 31", "G Silo 32", "Lunar 1", "G Lunar 2", "Lunar 3", "G Lunar 4", "Lunar 5", "G Lunar 6", "Lunar 7", "G Lunar 8"},
+	Options = {"Silo 1", "Silo 2", "G Silo 3", "G Silo 4", "Silo 5", "Silo 6", "G Silo 7", "G Silo 8", "Silo 9", "Silo 10","G Silo 11", "G Silo 12", "Silo 13", "Silo 14", "G Silo 15", "G Silo 16", "Silo 17", "Silo 18", "G Silo 19", "G Silo 20","Silo 21", "Silo 22", "G Silo 23", "G Silo 24", "Silo 25", "Silo 26", "G Silo 27", "G Silo 28", "Silo 29", "Silo 30",  "G Silo 31", "G Silo 32", "Lunar 1", "G Lunar 2", "Lunar 3", "G Lunar 4", "Lunar 5", "G Lunar 6", "Lunar 7", "G Lunar 8", "ChineseNewYear1", "ChineseNewYear2"},
 	Callback = function(Value)
 		autoegg = (Value)
 	end    
@@ -93,5 +93,10 @@ Tab:AddButton({
 end)
   	end    
 })
+
+--[[
+Name = <string> - The name of the section.
+]]
+
 
 OrionLib:Init()
