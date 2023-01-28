@@ -58,10 +58,9 @@ Tab:AddToggle({
 		getgenv().claimnmchest = bool
         task.spawn(function()
         while claimnmchest and task.wait() do
-        local TouchInterest222 = game.workspace.Chests.NormalChest.OnTouch.TouchInterest
-        firetouchinterest(TouchInterest222.Parent, game.Players.LocalPlayer.Character.HumanoidRootPart, 0)
-        task.wait(3)
-        firetouchinterest(TouchInterest222.Parent, game.Players.LocalPlayer.Character.HumanoidRootPart, 1)
+        Workspace.Chests.NormalChest.OnTouch.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+        task.wait(15)
+        Workspace.Chests.NormalChest.OnTouch.CFrame = game:GetService("Workspace").Chests.NormalChest.Root.CFrame
 end
 end)
 	end    
