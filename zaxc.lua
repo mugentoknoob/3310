@@ -94,9 +94,4 @@ end)
   	end    
 })
 
---[[
-Name = <string> - The name of the section.
-]]
-
-
 OrionLib:Init()
