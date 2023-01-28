@@ -54,7 +54,7 @@ Tab:AddToggle({
         local args = {
             [1] = autoegg
         }
-        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.EggService.RF.Buy:InvokeServer(unpack(args))
+        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.EggService.RF.Buy3x:InvokeServer(unpack(args))
         task.wait(1)
 end
 end)
