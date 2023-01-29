@@ -2,19 +2,21 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "Auto Farm - Nuke Simulator", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionOMG"})
 
 autoegg = "Silo 1"
-local names = {"Nuke Shop", "City", "Jungle", "Desert", "Beach", "Site Deep Blue", "Test Lab 33", "Volcano HQ", "Moon Base", "Excavation Site 42", "Dark Side Station", "Dark Lab 33"}
+local names = {"Nuke Shop", "City", "Jungle", "Desert", "Beach", "Site Deep Blue", "Test Lab 33", "Volcano HQ", "Moon Base", "Excavation Site 42", "Dark Side Station", "Dark Lab 33", "Cybertopia"}
 
 -- Unlock OpenGUI Everywhere
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3882.45751953125, 635.9100341796875, -3726.45703125) -- City
-task.wait(0.5)
+task.wait(0.3)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4897.2958984375, 634.9771118164062, -2855.522216796875) -- Beach
-task.wait(0.5)
+task.wait(0.3)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3766.79931640625, 854.472900390625, 3335.408935546875) -- MoonBase
-task.wait(0.5)
+task.wait(0.3)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1345.509033203125, 837.1240234375, 3399.826171875) -- Dark Side
-task.wait(0.5)
+task.wait(0.3)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1747.055419921875, 836.968017578125, 3343.113037109375) -- Dark Lab
-task.wait(0.5)
+task.wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4316.16162109375, 1580.4276123046875, -458.22406005859375) -- Cybertopia
+task.wait(0.3)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3989.4306640625, 637.9024047851562, -4214.2392578125) -- Base Spawn
 
 
@@ -104,7 +106,7 @@ local Section = Tab:AddSection({
 Tab:AddDropdown({
 	Name = "Select Egg",
 	Default = "Silo 1",
-	Options = {"Silo 1", "Silo 2", "G Silo 3", "G Silo 4", "Silo 5", "Silo 6", "G Silo 7", "G Silo 8", "Silo 9", "Silo 10","G Silo 11", "G Silo 12", "Silo 13", "Silo 14", "G Silo 15", "G Silo 16", "Silo 17", "Silo 18", "G Silo 19", "G Silo 20","Silo 21", "Silo 22", "G Silo 23", "G Silo 24", "Silo 25", "Silo 26", "G Silo 27", "G Silo 28", "Silo 29", "Silo 30",  "G Silo 31", "G Silo 32", "Lunar 1", "G Lunar 2", "Lunar 3", "G Lunar 4", "Lunar 5", "G Lunar 6", "Lunar 7", "G Lunar 8", "ChineseNewYear1", "ChineseNewYear2"},
+	Options = {"Silo 1", "Silo 2", "G Silo 3", "G Silo 4", "Silo 5", "Silo 6", "G Silo 7", "G Silo 8", "Silo 9", "Silo 10","G Silo 11", "G Silo 12", "Silo 13", "Silo 14", "G Silo 15", "G Silo 16", "Silo 17", "Silo 18", "G Silo 19", "G Silo 20","Silo 21", "Silo 22", "G Silo 23", "G Silo 24", "Silo 25", "Silo 26", "G Silo 27", "G Silo 28", "Silo 29", "Silo 30",  "G Silo 31", "G Silo 32", "Lunar 1", "G Lunar 2", "Lunar 3", "G Lunar 4", "Lunar 5", "G Lunar 6", "Lunar 7", "G Lunar 8", "ChineseNewYear1", "ChineseNewYear2", "cyber 1", "cyber 2"},
 	Callback = function(Value)
 		autoegg = (Value)
 	end    
