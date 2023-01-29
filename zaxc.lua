@@ -50,21 +50,30 @@ end)
 	end    
 })
 
+timechestnm = "AutoClaimChest"
+timechestnm2 = game:GetService("Workspace").Chests.NormalChest.Root.BillboardGui.Time.Text
 
 Tab:AddToggle({
-	Name = "Auto Claim Chest",
+	Name = timechestnm,
 	Default = false,
 	Callback = function(bool)
 		getgenv().claimnmchest = bool
         task.spawn(function()
         while claimnmchest and task.wait() do
+        if game:GetService("Workspace").Chests.NormalChest.Root.BillboardGui.Time.Text == "Claim" then
         Workspace.Chests.NormalChest.OnTouch.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
-        task.wait(15)
+        task.wait(5)
         Workspace.Chests.NormalChest.OnTouch.CFrame = game:GetService("Workspace").Chests.NormalChest.Root.CFrame
+        end
 end
 end)
 	end    
 })
+
+local Section = Tab:AddSection({
+	Name = "Time Chest"
+})
+local CoolLabel = Tab:AddLabel("...")
 
 local Section = Tab:AddSection({
 	Name = "Sup"
@@ -187,5 +196,13 @@ Tab:AddButton({
         Workspace.Machines.RainbowMachine.OnTouch.CFrame = game:GetService("Workspace").Machines.RainbowMachine.Root.CFrame
   	end    
 })
+
+_G.toggle = true -- update time chest
+while _G.toggle do
+wait()
+timechestnm3 = game:GetService("Workspace").Chests.NormalChest.Root.BillboardGui.Time.Text
+CoolLabel:Set(timechestnm3)
+end
+
 
 OrionLib:Init()
