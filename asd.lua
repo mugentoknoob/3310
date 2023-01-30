@@ -70,7 +70,7 @@ Tab1:Slider("Cooldown Auto Rebirth",30,120,30,function(value)
 
 Tab1:Seperator("Other")
 
-Tab1:Button("Destroy GUI",function()
+Tab1:Button("AntiAFK",function()
     local vu = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:connect(function()
     vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
