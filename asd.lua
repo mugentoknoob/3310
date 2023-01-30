@@ -90,10 +90,10 @@ getgenv().autojb2 = bool
     task.spawn(function()
         while autojb2 and task.wait() do
         if lp.PlayerGui.Wave.Enabled == true then
-        task.wait(0.4)
+        task.wait(0.35)
         game.Players.LocalPlayer.Character:MoveTo(Vector3.new(0.07340412586927414, 3.38608407974242316, -42.727420806884766))
         else if lp.PlayerGui.Wave.Enabled == false then
-        task.wait(0.4)
+        task.wait(0.35)
         game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1396.8380126953125, 3.147925853729248, -29.104999542236328))
         end
         end
