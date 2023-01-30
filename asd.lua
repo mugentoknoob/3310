@@ -71,7 +71,11 @@ Tab1:Slider("Cooldown Auto Rebirth",30,120,30,function(value)
 Tab1:Seperator("Other")
 
 Tab1:Button("Destroy GUI",function()
-    DarkraiX:ToggleUi()
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    wait(1)
+    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
 
 -- Space
@@ -86,10 +90,10 @@ getgenv().autojb2 = bool
     task.spawn(function()
         while autojb2 and task.wait() do
         if lp.PlayerGui.Wave.Enabled == true then
-        task.wait(0.2)
+        task.wait(0.4)
         game.Players.LocalPlayer.Character:MoveTo(Vector3.new(0.07340412586927414, 3.38608407974242316, -42.727420806884766))
         else if lp.PlayerGui.Wave.Enabled == false then
-        task.wait(0.2)
+        task.wait(0.4)
         game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1396.8380126953125, 3.147925853729248, -29.104999542236328))
         end
         end
@@ -136,6 +140,10 @@ Tab1:Slider("Cooldown Auto Rebirth",1,120,1,function(value)
 
 Tab1:Seperator("Other")
 
-Tab1:Button("Destroy GUI",function()
-    DarkraiX:ToggleUi()
+Tab1:Button("AntiAFK",function()
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    wait(1)
+    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
